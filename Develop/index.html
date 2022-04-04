@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Description" content="Enter your description here" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="style.css" />
 
   <title>AR Weather Dashboard Bootstrap Utilities</title>
@@ -14,48 +15,47 @@
 
 <body>
   <!-- Bootstrap uses color utility classes to set colors for text and background colors -->
-  <header class="jumbotron jumbotron-fluid bg-dark text-light">
-    <div class="container">
+<header class="jumbotron jumbotron-fluid bg-dark text-light">
+  <div class="container">
       <!-- Use align-items utilities on flexbox containers to align to start, end, center, baseline, or stretch -->
-      <!-- <div class="row align-items-end"> -->
         <h1>Welcome to the Weather Dashboard.</h1>
         <div id="currentDay" class="card-body"></div>
   
-        <div class="col-12">
+      <div class="col-12">
        <span style='font-size:100px;'>&#9925;</span>
-        </div>
-
-        <div class="col-12">
-          
-          <p>Enter the Name of A City:</p>
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /> </br>
-            <button type="button" class="btn btn-outline-primary">Get Weather</button>
-          </div>
-        </div>
       </div>
+
+        <div id="citySearch" class="col-12">
+          <p>Enter the Name of A City:</p>
+            <input 
+            type="search" 
+            class="form-control rounded" 
+            id= "currentCity"
+            placeholder="City Name" 
+            aria-label="Search" 
+            aria-describedby="search-addon" 
+            /> </br>
+            <button type="button" id="search-button" class="btn btn-outline-primary">Get Weather</button>
+        </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="infoContainer">
     <!-- Bootstrap spacing utilities use m- for margin and p- for padding --> 
-
       <div class="col-12 col-md-9">
-        <h2>5 Day forecast</h2>
+        <h2>5 Day forecast for: <span id="searchedCity"></span> </h2>
         <!-- 5 Containers for forecast-->
         <section class="row justify-content-around">
-
           <div class="col-12 col-sm-6 col-lg-4 mb-3">
             <div class="card">
               <h3 class="card-header bg-info">
                 DAY 1
               </h3>
-              <div id="day1" id="day1" class="card-body">
-                <p class="card-date1">
+              <div id="day1" class="card-body">
                   <h3 id="date1">DATE</h3>
-                </p>
-                <div id="icon1">WEATHER ICON</div>
-                <h4 id="temp1">TEMP</h4>
-                <h4 id="hum1">HUMIDITY</h4>
+                  <div id="icon1">WEATHER ICON</div>
+                  <h4 id="temp1">TEMP</h4>
+                  <h4 id="desc1">Description</h4>
               </div>
             </div>
           </div>
@@ -64,13 +64,11 @@
               <h3 class="card-header bg-success">
                 DAY 2
               </h3>
-              <div id="day2" id="day2" class="card-body">
-                <p class="card-date1">
-                  <h3 id="date2">DATE</h3>
-                </p>
+              <div id="day2" class="card-body">
+                <h3 id="date2">DATE</h3>
                 <div id="icon2">WEATHER ICON</div>
                 <h4 id="temp2">TEMP</h4>
-                <h4 id="hum2">HUMIDITY</h4>
+                <h4 id="desc2">Description</h4>
               </div>
             </div>
           </div>
@@ -79,13 +77,11 @@
               <h3 class="card-header bg-warning">
                 DAY 3
               </h3>
-              <div id="day3" id="day3" class="card-body">
-                <p class="card-date1">
-                  <h3 id="date3">DATE</h3>
-                </p>
+              <div id="day3" class="card-body">
+                <h3 id="date3">DATE</h3>
                 <div id="icon3">WEATHER ICON</div>
                 <h4 id="temp3">TEMP</h4>
-                <h4 id="hum3">HUMIDITY</h4>
+                <h4 id="desc3">Description</h4>
               </div>
             </div>
           </div>
@@ -94,12 +90,11 @@
               <h3 class="card-header bg-warning">
                 DAY 4
               </h3>
-              <div id="day4" id="day4" class="card-body">
-                <h3 id="date4">DATE</h3>
-              </p>
-              <div id="icon4">WEATHER ICON</div>
-              <h4 id="temp4">TEMP</h4>
-              <h4 id="hum4">HUMIDITY</h4>
+              <div id="day4" class="card-body">
+               <h3 id="date4">DATE</h3>
+                <div id="icon4">WEATHER ICON</div>
+                <h4 id="temp4">TEMP</h4>
+                <h4 id="desc4">Description</h4>
               </div>
             </div>
           </div>
@@ -108,47 +103,24 @@
               <h3 class="card-header bg-warning">
                 DAY 5
               </h3>
-              <div id="day5" id="day5" class="card-body">
+              <div id="day5" class="card-body">
                 <h3 id="date5">DATE</h3>
-              </p>
-              <div id="icon5">WEATHER ICON</div>
-              <h4 id="temp5">TEMP</h4>
-              <h4 id="hum5">HUMIDITY</h4>
+                <div id="icon5">WEATHER ICON</div>
+                <h4 id="temp5">TEMP</h4>
+                <h4 id="desc5">Description</h4>
               </div>
             </div>
           </div>
-      
-    <section class="row justify-content-center my-4">
-      <div class="col-sm-6">
-        <address>
-          <h2>Past Searched Cities:</h2>
-          <h5>Past Searches</h5>
-
-        </address>
-      </div>
-      <div class="col-sm-6">
-        <h2>Leave a Comment</h2>
-        <form>
-          <div class="form-group">
-            <label for="name-input">Your name:</label>
-            <input type="text" class="form-control" id="name-input" placeholder="Leave your name" />
-          </div>
-          <div class="form-group">
-            <label for="comment-input">Your message:</label>
-            <textarea name="comment" id="comment-input" class="form-control"></textarea>
-          </div>
-          <button class="btn btn-success">Submit Message.</button>
-        </form>
-      </div>
-    </section>
   </main>
+  <footer id="pastSearch" class="w3-center w3-black w3-padding-16">
+        <p>Past Searched <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Cities</a></p>
+  </footer>
+ 
 <!-- Added link to the jQuery library -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script type="text/javascript" src="./Develop/script.js"></script>
+<!-- <script type="text/javascript" src="./Develop/script.js"></script> -->
+<script type="text/javascript" src="JS.js"></script> 
 </body>
-
-</body>
-
 </html>
