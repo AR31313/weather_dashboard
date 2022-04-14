@@ -24,15 +24,15 @@ var getCurrentForecast = function () {
     console.log(currentCity.value);
     // Set the apiUrl to fetch from API using weather search
     // var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&APPID=" + myAPI;
-    // fetch(apiUrl).then(function (response) {
-    //     if (response.ok) {
-    //         response.json().then(function (data) {
-    //             console.log(data)
-    //         });
-    //     } else {
-    //         alert('Error: ' + response.statusText);
-    //     }
-    // });
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data)
+            });
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    });
 };
 
 
