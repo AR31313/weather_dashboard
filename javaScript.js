@@ -7,24 +7,32 @@ var wind = document.querySelector('#temp1');
 var myAPI = "308cb06555dd8f32cf29b8034f750d6d";
 var forecastCards = document.querySelector('#day2');
 
+// Button function to clear local storage and clear contents
+$("#clearFieldsBtn").click(function (event) {
+    event.preventDefault;
+    $("textarea").val("");
+    localStorage.clear();
+    forecastCards.innerHTML = "";
+});
+
 // RETRIVE ITEM FROM STORAGE AFTER HITTING REFRESH BTN
 //https://stackoverflow.com/questions/17745292/how-to-retrieve-all-localstorage-items-without-knowing-the-keys-in-advance
 
-// function allStorage() {
-//     var values = [],
-//         keys = Object.keys(localStorage),
-//         i = keys.length;
-//     while (i--) {
-//         values.push(localStorage.getItem(keys[i]));
-//     }
-//     return values;
-// }
-// for (let i = 0; i < 10; i++) {
-//     console.log(document.getElementById(`${i}`))
-//     document.getElementById(`${i}`).value = localStorage.getItem(`${i}`)
-// }
+function allStorage() {
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+    while (i--) {
+        values.push(localStorage.getItem(keys[i]));
+    }
+    return values;
+}
+for (let i = 0; i < currentCity.length; i++) {
+    console.log(document.getElementById(`${i}`))
+    document.getElementById(`${i}`).value = localStorage.getItem(`${i}`)
+}
 
-//grabs values from hour and entry divs and saves them to local storage
+//grabs values from city divs and saves them to local storage
 for (var i = 0; i < button.length; i++) {
     $("#search-button").click(function (event) {
         var entry = event.target.previousElementSibling.value;
