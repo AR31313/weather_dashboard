@@ -34,3 +34,4 @@
   https://github.com/AR31313/weather_dashboard
 
 - Screenshot of the deployed application:
+  ![Untitled](https://user-images.githubusercontent.com/96843377/163892950-a730ee0a-6e45-480e-80ba-55e930808207.png)
