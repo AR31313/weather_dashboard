@@ -31,13 +31,15 @@
             type="search" 
             class="form-control rounded" 
             id= "currentCity"
+            onfocus="this.value=''"
             placeholder="City Name" 
             aria-label="Search" 
             aria-describedby="search-addon" 
             /> </br>
             <button type="button" id="search-button" class="btn btn-secondary">Get Weather</button>
-            <p id="currentDay" class="lead"></p>
-      <button id="clearFieldsBtn" type="button" class="btn btn-outline-primary">Clear</button>
+           
+      <button id="clearFieldsBtn" type="button" class="btn btn-outline-primary" onclick="document.getElementById('currentCity').value = ''">Clear input field</button>
+
         </div>
     </div>
   </header>
@@ -45,8 +47,8 @@
   <main class="infoContainer">
     <!-- Bootstrap spacing utilities use m- for margin and p- for padding --> 
      
-        <h2>5 Day forecast for: </h2>
-        <h1><span id="currentCity"></span></h1>
+        <h2>5 Day forecast for: 
+        <span id="repo-search-term"></span></h2>
         <!-- 5 Containers for forecast-->
         <div><section class="row justify-content-around" id="weatherCards">
               <div id="day2" class="card-body"> </div>
@@ -55,7 +57,10 @@
           
   </main>
   <footer id="pastSearch" class="w3-center w3-black w3-padding-16">
-        <p>Past Searched <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Cities</a></p>
+        <h4>Past Searched Cities</h4>
+        <h4><span></span></h4>
+        
+        
   </footer>
  
 <!-- Added link to the jQuery library -->
